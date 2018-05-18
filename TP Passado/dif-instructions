@@ -1,55 +1,55 @@
-ANTIGO				ATUAL
-00 - exit			00 - stop
-01 - loadi			01 - load
-02 - storei			02 - store
-03 - add			03 - read
-04 - subtract		04 - write
-05 - multiply		05 - add
-06 - divide 		06 - subtract
-07 - jump			07 - multiply
-08 - jmpz			08 - divide
-09 - jmpn			09 - jump
-10 - move			0A - jmpz
-11 - load			0B - jmpn
-12 - store 			0C - move
-13 - loadc			0D - push
-14 - clear			0E - pop
-15 - negate 		0F - call
-16 - push			0X800 - return
-17 - pop			11 - load_s
-18 - addi			12 - store_s
-19 - call			13 - loadc
-20 - return			14 - loadi
-					15 - storei
-					16 - copytop
+ANTIGO              ATUAL
+00 - exit           00 - stop
+01 - loadi          01 - load
+02 - storei         02 - store
+03 - add            03 - read
+04 - subtract       04 - write
+05 - multiply       05 - add
+06 - divide         06 - subtract
+07 - jump           07 - multiply
+08 - jmpz           08 - divide
+09 - jmpn           09 - jump
+10 - move           0A - jmpz
+11 - load           0B - jmpn
+12 - store          0C - move
+13 - loadc          0D - push
+14 - clear          0E - pop
+15 - negate         0F - call
+16 - push           0X800 - return
+17 - pop            11 - load_s
+18 - addi           12 - store_s
+19 - call           13 - loadc
+20 - return         14 - loadi
+                    15 - storei
+                    16 - copytop
 
 RELACAO:
 
-ATUAL	||	ANTIGO
+ATUAL   ||  ANTIGO
 
-00		== 	00 	(stop == exit)
-01		==	01	(load == loadi)(mem->reg)
-02		==	02	(store == storei)(reg->mem)
-03		~=	01	(read ~= loadi) (verificar especificacao)
-04		~=	02	(write ~= storei) (verificar especificacao)	
-05		==*	03	(add == add)
-06		==*	04	(subtract == subtract)
-07		==*	05	(multiply == multiply)
-08		==*	06	(divide == divide)
-09		==*	07	(jump == jump)
-0A		==*	08	(jmpz == jmpz)
-0B		==*	09	(jmpn == jmpn)
-0C		==*	10	(move == move)
-0D		==*	16	(push == push)
-0E		==*	17	(pop == pop)
-0F		==*	19	(call == call)
-0X800	==*	20	(return == return)
-11		??
-12		??
-13		??
-14		??
-15		??
-16		??
+00      ==  00  (stop == exit)
+01      ==  01  (load == loadi)(mem->reg)
+02      ==  02  (store == storei)(reg->mem)
+03      ~=  01  (read ~= loadi) (verificar especificacao)
+04      ~=  02  (write ~= storei) (verificar especificacao) 
+05      ==* 03  (add == add)
+06      ==* 04  (subtract == subtract)
+07      ==* 05  (multiply == multiply)
+08      ==* 06  (divide == divide)
+09      ==* 07  (jump == jump)
+0A      ==* 08  (jmpz == jmpz)
+0B      ==* 09  (jmpn == jmpn)
+0C      ==* 10  (move == move)
+0D      ==* 16  (push == push)
+0E      ==* 17  (pop == pop)
+0F      ==* 19  (call == call)
+0X800   ==* 20  (return == return)
+11      ??
+12      ??
+13      ??
+14      ??
+15      ??
+16      ??
 
 ==* -> mesma relacao, porem verificar representacao dos bits (antigo tinha mais regs para uso geral)
 
